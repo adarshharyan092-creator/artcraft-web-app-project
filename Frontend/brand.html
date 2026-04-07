@@ -432,7 +432,7 @@ const API_BASE = 'http://localhost:8000';
 const token = localStorage.getItem('artcraft_api_token');
 const sess  = (() => { try { return JSON.parse(localStorage.getItem('artcraft_session_v1')); } catch { return null; } })();
 
-if (!token || !sess || sess.role !== 'brand') window.location.href = 'login.html';
+if (!token || !sess || sess.role !== 'brand') window.location.href = 'index.html';
 
 const ME_ID = sess?.userId;
 
@@ -467,7 +467,7 @@ function openModal(id) { document.getElementById(id).classList.remove('hidden');
 function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
 document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', e => { if(e.target===o) closeModal(o.id); }));
 function setBadge(id,n){ const el=document.getElementById(id); if(!el)return; el.textContent=n; el.style.display=n>0?'inline-block':'none'; }
-function signOut() { api('POST','/auth/logout').finally(()=>{ localStorage.removeItem('artcraft_api_token'); localStorage.removeItem('artcraft_session_v1'); window.location.href='login.html'; }); }
+function signOut() { api('POST','/auth/logout').finally(()=>{ localStorage.removeItem('artcraft_api_token'); localStorage.removeItem('artcraft_session_v1'); window.location.href='index.html'; }); }
 
 const panelTitles = { dashboard:'Dashboard', artists:'Find Artists', jobs:'My Job Posts', applications:'Applications', competitions:'Competitions', payments:'Pay Artists', messages:'Messages', notifications:'Notifications', profile:'Brand Profile' };
 let _myProfile = null;

@@ -504,7 +504,7 @@ const sess = (() => { try { return JSON.parse(localStorage.getItem('artcraft_ses
 if (!token || !sess || sess.role !== 'artist') {
   localStorage.removeItem('artcraft_api_token');
   localStorage.removeItem('artcraft_session_v1');
-  window.location.href = 'login.html';
+  window.location.href = 'index.html';
 } else {
   fetch(API_BASE + '/auth/me', {
     headers: { Authorization: 'Bearer ' + token }
@@ -512,13 +512,13 @@ if (!token || !sess || sess.role !== 'artist') {
     if (!r.ok) {
       localStorage.removeItem('artcraft_api_token');
       localStorage.removeItem('artcraft_session_v1');
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     }
   }).catch(() => {
     // Backend unreachable — redirect to login
     localStorage.removeItem('artcraft_api_token');
     localStorage.removeItem('artcraft_session_v1');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   });
 }
 
@@ -586,7 +586,7 @@ function signOut() {
   api('POST', '/auth/logout').finally(() => {
     localStorage.removeItem('artcraft_api_token');
     localStorage.removeItem('artcraft_session_v1');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   });
 }
 

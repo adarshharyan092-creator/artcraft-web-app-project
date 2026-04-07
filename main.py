@@ -824,7 +824,6 @@
 """
 ArtCraft Backend — FastAPI + MongoDB (PyMongo) + Stripe + Groq AI
 """
-
 from fastapi import FastAPI, HTTPException, Depends, UploadFile, File, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
