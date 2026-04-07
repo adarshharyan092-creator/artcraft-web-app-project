@@ -430,7 +430,7 @@ last_name: lastName,
 email: email,
 password: password,
 role: role
-}, false);
+}, true);
 
 ```
 this._setToken(data.token);
@@ -444,7 +444,7 @@ const data = await this._fetch("POST", "/auth/login", {
 email: email,
 password: password,
 role: role
-}, false);
+}, true);
 
 ```
 this._setToken(data.token);
